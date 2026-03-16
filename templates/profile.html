@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarePill - Profile</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>CarePill - Profile</h1>
+            <h1>CarePill</h1>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         </div>
     </header>
@@ -29,25 +30,305 @@
         </nav>
     </aside>
     <main>
-        <section id="profile" data-module="home">
-            <h2>Your Profile</h2>
-            <div class="profile-info">
-                <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
-                <div class="profile-details">
-                    <h3>John Doe</h3>
-                    <p>Email: john.doe@example.com</p>
-                    <p>Role: Patient</p>
-                    <p>Member since: 2023</p>
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="container">
+                <div class="profile-overview">
+                    <div class="profile-avatar">
+                        <img src="https://via.placeholder.com/120x120/00ffff/000000?text=JD" alt="Profile Picture" id="profile-pic">
+                        <button class="edit-avatar-btn" onclick="changeAvatar()">Change Photo</button>
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="profile-name">John Doe</h1>
+                        <p class="profile-role" id="profile-role">Patient</p>
+                        <p class="profile-email" id="profile-email">john.doe@example.com</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Appointments</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Prescriptions</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-primary" onclick="editProfile()">Edit Profile</button>
+                        <button class="btn-secondary" onclick="viewSettings()">Settings</button>
+                    </div>
                 </div>
             </div>
-            <div class="profile-actions">
-                <button onclick="editProfile()">Edit Profile</button>
-                <button onclick="viewHistory()">View History</button>
-                <button onclick="logout()">Logout</button>
+        </section>
+
+        <!-- Profile Navigation -->
+        <section class="profile-nav">
+            <div class="container">
+                <nav class="profile-tabs">
+                    <button class="tab-btn active" onclick="showTab('personal')">Personal Info</button>
+                    <button class="tab-btn" onclick="showTab('medical')">Medical History</button>
+                    <button class="tab-btn" onclick="showTab('appointments')">Appointments</button>
+                    <button class="tab-btn" onclick="showTab('prescriptions')">Prescriptions</button>
+                    <button class="tab-btn" onclick="showTab('reminders')">Reminders</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Profile Content -->
+        <section class="profile-content">
+            <div class="container">
+                <!-- Personal Information Tab -->
+                <div id="personal-tab" class="tab-content active">
+                    <div class="content-grid">
+                        <div class="info-card">
+                            <h3>Basic Information</h3>
+                            <div class="info-item">
+                                <label>Full Name</label>
+                                <span id="full-name">John Doe</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Date of Birth</label>
+                                <span id="dob">January 15, 1985</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Gender</label>
+                                <span id="gender">Male</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Blood Type</label>
+                                <span id="blood-type">O+</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Contact Information</h3>
+                            <div class="info-item">
+                                <label>Email</label>
+                                <span id="email">john.doe@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Phone</label>
+                                <span id="phone">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Address</label>
+                                <span id="address">123 Health Street, Medical City, MC 12345</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Emergency Contact</label>
+                                <span id="emergency">Jane Doe - +1 (555) 987-6543</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Insurance Information</h3>
+                            <div class="info-item">
+                                <label>Provider</label>
+                                <span id="insurance-provider">HealthCare Plus</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Policy Number</label>
+                                <span id="policy-number">HCP-123456789</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Group Number</label>
+                                <span id="group-number">GRP-987654</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Expiration Date</label>
+                                <span id="insurance-expiry">December 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical History Tab -->
+                <div id="medical-tab" class="tab-content">
+                    <div class="medical-timeline">
+                        <h3>Medical History</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-date">March 2024</div>
+                            <div class="timeline-content">
+                                <h4>Annual Physical Examination</h4>
+                                <p>All vitals normal. Recommended continued monitoring of blood pressure.</p>
+                                <span class="timeline-doctor">Dr. Sarah Johnson</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">January 2024</div>
+                            <div class="timeline-content">
+                                <h4>Flu Vaccination</h4>
+                                <p>Received seasonal flu vaccine. No adverse reactions.</p>
+                                <span class="timeline-doctor">Nurse Emily Davis</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">November 2023</div>
+                            <div class="timeline-content">
+                                <h4>Blood Work Results</h4>
+                                <p>Cholesterol levels slightly elevated. Started low-dose statin therapy.</p>
+                                <span class="timeline-doctor">Dr. Michael Chen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div id="appointments-tab" class="tab-content">
+                    <div class="appointments-list">
+                        <h3>Upcoming Appointments</h3>
+                        <div class="appointment-card upcoming">
+                            <div class="appointment-info">
+                                <h4>Cardiology Follow-up</h4>
+                                <p>Dr. Michael Chen - March 25, 2024 at 2:00 PM</p>
+                                <span class="appointment-type">In-Person</span>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-secondary" onclick="rescheduleAppointment(1)">Reschedule</button>
+                                <button class="btn-danger" onclick="cancelAppointment(1)">Cancel</button>
+                            </div>
+                        </div>
+
+                        <h3>Past Appointments</h3>
+                        <div class="appointment-card past">
+                            <div class="appointment-info">
+                                <h4>Annual Physical</h4>
+                                <p>Dr. Sarah Johnson - March 15, 2024 at 10:00 AM</p>
+                                <span class="appointment-type">Telemedicine</span>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-secondary" onclick="viewSummary(1)">View Summary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prescriptions Tab -->
+                <div id="prescriptions-tab" class="tab-content">
+                    <div class="prescriptions-list">
+                        <h3>Active Prescriptions</h3>
+                        <div class="prescription-card active">
+                            <div class="prescription-info">
+                                <h4>Lisinopril 10mg</h4>
+                                <p>Take 1 tablet daily for blood pressure</p>
+                                <div class="prescription-details">
+                                    <span>Refills remaining: 3</span>
+                                    <span>Expires: June 2024</span>
+                                </div>
+                            </div>
+                            <div class="prescription-actions">
+                                <button class="btn-primary" onclick="requestRefill(1)">Request Refill</button>
+                                <button class="btn-secondary" onclick="viewDetails(1)">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="prescription-card active">
+                            <div class="prescription-info">
+                                <h4>Atorvastatin 20mg</h4>
+                                <p>Take 1 tablet daily for cholesterol</p>
+                                <div class="prescription-details">
+                                    <span>Refills remaining: 5</span>
+                                    <span>Expires: August 2024</span>
+                                </div>
+                            </div>
+                            <div class="prescription-actions">
+                                <button class="btn-primary" onclick="requestRefill(2)">Request Refill</button>
+                                <button class="btn-secondary" onclick="viewDetails(2)">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reminders Tab -->
+                <div id="reminders-tab" class="tab-content">
+                    <div class="reminders-section">
+                        <h3>Medication Reminders</h3>
+                        <div class="reminder-item">
+                            <div class="reminder-info">
+                                <h4>Morning Medications</h4>
+                                <p>Lisinopril 10mg, Atorvastatin 20mg</p>
+                                <span class="reminder-time">8:00 AM Daily</span>
+                            </div>
+                            <div class="reminder-status">
+                                <span class="status active">Active</span>
+                            </div>
+                        </div>
+
+                        <div class="reminder-item">
+                            <div class="reminder-info">
+                                <h4>Weekly Check-in</h4>
+                                <p>Health monitoring appointment</p>
+                                <span class="reminder-time">Every Monday 9:00 AM</span>
+                            </div>
+                            <div class="reminder-status">
+                                <span class="status active">Active</span>
+                            </div>
+                        </div>
+
+                        <div class="reminder-controls">
+                            <button class="btn-primary" onclick="addReminder()">Add New Reminder</button>
+                            <button class="btn-secondary" onclick="manageReminders()">Manage Reminders</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+
     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CarePill</h4>
+                    <p>The future of telemedicine, built for speed, precision, and patient care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="/patient">Patient Portal</a></li>
+                        <li><a href="/doctor">Doctor Dashboard</a></li>
+                        <li><a href="/admin">Admin Panel</a></li>
+                        <li><a href="/delivery">Delivery Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/prescription">Prescription Management</a></li>
+                        <li><a href="/reminder">Medication Reminders</a></li>
+                        <li><a href="/profile">Health Profiles</a></li>
+                        <li>Help Center</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                        <li>HIPAA Compliance</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CarePill. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/profile.js"></script>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
         <p>&copy; 2026 CarePill</p>
     </footer>
     <script src="/static/js/profile.js"></script>
