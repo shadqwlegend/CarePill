@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePill - Prescription Module</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>CarePill - Prescription</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+    <aside id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/doctor">Doctor</a></li>
+                <li><a href="/delivery">Delivery</a></li>
+                <li><a href="/prescription">Prescription</a></li>
+                <li><a href="/reminder">Reminder</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section id="prescription-management" data-module="prescription">
+            <h2>Prescription Management</h2>
+            <form id="prescription-form">
+                <label for="patient-id">Patient ID:</label>
+                <input type="text" id="patient-id" required>
+                <label for="medication">Medication:</label>
+                <input type="text" id="medication" required>
+                <label for="dosage">Dosage:</label>
+                <input type="text" id="dosage" required>
+                <button type="submit">Create Prescription</button>
+            </form>
+            <div id="prescription-list">
+                <h3>Prescriptions</h3>
+                <ul id="prescriptions">
+                    <!-- Prescriptions will be loaded here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Telemedicine App</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('a[href="/prescription"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePill - Doctor Module</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>CarePill - Doctor</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+    <aside id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/doctor">Doctor</a></li>
+                <li><a href="/delivery">Delivery</a></li>
+                <li><a href="/prescription">Prescription</a></li>
+                <li><a href="/reminder">Reminder</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section id="doctor-dashboard" data-module="doctor">
+            <h2>Doctor Dashboard</h2>
+            <div class="doctor-actions">
+                <button onclick="viewPatients()">View Patients</button>
+                <button onclick="scheduleAppointment()">Schedule Appointment</button>
+                <button onclick="prescribeMedication()">Prescribe Medication</button>
+            </div>
+            <div id="patient-list">
+                <h3>My Patients</h3>
+                <ul id="patients">
+                    <!-- Patients will be loaded here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Telemedicine App</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('a[href="/doctor"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>

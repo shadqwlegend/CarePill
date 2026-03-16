@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePill - Reminder Module</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>CarePill - Reminder</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+    <aside id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/doctor">Doctor</a></li>
+                <li><a href="/delivery">Delivery</a></li>
+                <li><a href="/prescription">Prescription</a></li>
+                <li><a href="/reminder">Reminder</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section id="reminder-system" data-module="reminder">
+            <h2>Reminder System</h2>
+            <form id="reminder-form">
+                <label for="reminder-type">Type:</label>
+                <select id="reminder-type">
+                    <option value="appointment">Appointment</option>
+                    <option value="medication">Medication</option>
+                    <option value="checkup">Checkup</option>
+                </select>
+                <label for="reminder-date">Date:</label>
+                <input type="datetime-local" id="reminder-date" required>
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Set Reminder</button>
+            </form>
+            <div id="reminder-list">
+                <h3>Upcoming Reminders</h3>
+                <ul id="reminders">
+                    <!-- Reminders will be loaded here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Telemedicine App</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('a[href="/reminder"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>

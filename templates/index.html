@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePill - Telemedicine Management</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>CarePill</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+    <aside id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/doctor">Doctor</a></li>
+                <li><a href="/delivery">Delivery</a></li>
+                <li><a href="/prescription">Prescription</a></li>
+                <li><a href="/reminder">Reminder</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section id="home" data-module="home">
+            <h2>Welcome to Telemedicine App</h2>
+            <p>Manage your telemedicine services efficiently with our comprehensive platform.</p>
+            
+            <div class="info-section">
+                <img src="https://via.placeholder.com/300x200/00ffff/000000?text=Telemedicine" alt="Telemedicine" style="float: right; margin-left: 1rem;">
+                <h3>About Telemedicine</h3>
+                <p>Telemedicine allows healthcare providers to evaluate, diagnose, and treat patients remotely using telecommunications technology. Our platform connects patients, doctors, and administrators seamlessly.</p>
+            </div>
+            
+            <div class="tips-section">
+                <h3>Quick Tips for Better Health</h3>
+                <ul>
+                    <li>Stay hydrated and maintain a balanced diet</li>
+                    <li>Schedule regular check-ups with your doctor</li>
+                    <li>Keep track of your medications and reminders</li>
+                    <li>Use our platform for convenient consultations</li>
+                </ul>
+            </div>
+            
+            <div class="features-section">
+                <h3>Platform Features</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <img src="https://via.placeholder.com/100x100/00ffff/000000?text=Patient" alt="Patient Management">
+                        <h4>Patient Management</h4>
+                        <p>Register patients and manage their medical records.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://via.placeholder.com/100x100/00ffff/000000?text=Doctor" alt="Doctor Consultations">
+                        <h4>Doctor Consultations</h4>
+                        <p>Connect with healthcare professionals remotely.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://via.placeholder.com/100x100/00ffff/000000?text=Prescription" alt="Prescription Tracking">
+                        <h4>Prescription Tracking</h4>
+                        <p>Manage and track medication prescriptions.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://via.placeholder.com/100x100/00ffff/000000?text=Delivery" alt="Delivery Services">
+                        <h4>Delivery Services</h4>
+                        <p>Track medication deliveries to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 CarePill</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('a[href="/"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
