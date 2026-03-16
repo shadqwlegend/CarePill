@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CarePill - Telemedicine Management System
 
 A comprehensive telemedicine platform built with Flask, featuring patient management, doctor consultations, prescription handling, delivery services, and medication reminders.
