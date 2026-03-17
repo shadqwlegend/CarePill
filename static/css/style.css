@@ -57,7 +57,15 @@ body::before {
     background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 40px),
                       repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 40px);
 }
+
+main {
+    position: relative;
+    z-index: 1;
+    padding-top: 80px;
+    min-height: calc(100vh - 160px);
+    background-color: #000;
 }
+
 .navbar {
     position: fixed;
     top: 0;
@@ -68,7 +76,6 @@ body::before {
     z-index: 1000;
     transition: var(--transition);
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.15);
-}
 }
 
 .navbar .container {
@@ -102,7 +109,6 @@ body::before {
     transition: var(--transition);
     padding: 0.5rem 1rem;
     border-radius: 6px;
-}
 }
 
 .nav-links a:hover {
