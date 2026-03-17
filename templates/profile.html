@@ -8,47 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>CarePill</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CarePill</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/matching">Matching</a></li>
+                <li><a href="/showcase">Showcase</a></li>
+                <li><a href="/mentor">Mentor</a></li>
+                <li class="dropdown">
+                    <a href="#" id="moreBtn">More</a>
+                    <div class="menu-panel" id="moreDropdown">
+                        <ul class="menu-links">
+                            <li><a href="/admin">Admin</a></li>
+                            <li><a href="/patient">Patient</a></li>
+                            <li><a href="/doctor">Doctor</a></li>
+                            <li><a href="/delivery">Delivery</a></li>
+                            <li><a href="/prescription">Prescription</a></li>
+                            <li><a href="/reminder">Reminder</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/login" class="btn-secondary">Sign in</a>
+                <a href="/register" class="btn-primary">Get started</a>
+            </div>
         </div>
-    </header>
-    <nav class="main-navbar">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/admin">Admin</a></li>
-            <li><a href="/patient">Patient</a></li>
-            <li><a href="/doctor">Doctor</a></li>
-            <li><a href="/delivery">Delivery</a></li>
-            <li><a href="/prescription">Prescription</a></li>
-            <li><a href="/reminder">Reminder</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
     </nav>
-        <!-- Hamburger Menu Button -->
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
-            <img src="/static/img/hamburger.png" alt="Menu" width="40" height="40" />
-        </button>
-        <!-- Side Navigation Panel -->
-        <div class="side-panel" id="sidePanel">
-            <button class="close-panel" id="closePanelBtn" aria-label="Close menu">&times;</button>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/admin">Admin</a></li>
-                    <li><a href="/patient">Patient</a></li>
-                    <li><a href="/doctor">Doctor</a></li>
-                    <li><a href="/delivery">Delivery</a></li>
-                    <li><a href="/prescription">Prescription</a></li>
-                    <li><a href="/reminder">Reminder</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/login">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="panel-backdrop" id="panelBackdrop"></div>
     <main>
         <!-- Profile Header -->
         <section class="profile-header">

@@ -7,28 +7,34 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <!-- Hamburger Menu Button -->
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
-        <img src="/static/img/hamburger.png" alt="Menu" width="40" height="40" />
-    </button>
-    <!-- Side Navigation Panel -->
-    <div class="side-panel" id="sidePanel">
-        <button class="close-panel" id="closePanelBtn" aria-label="Close menu">&times;</button>
-        <nav>
-            <ul>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CarePill</div>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/patient">Patient</a></li>
-                <li><a href="/doctor">Doctor</a></li>
-                <li><a href="/delivery">Delivery</a></li>
-                <li><a href="/prescription">Prescription</a></li>
-                <li><a href="/reminder">Reminder</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a href="/matching">Matching</a></li>
+                <li><a href="/showcase">Showcase</a></li>
+                <li><a href="/mentor">Mentor</a></li>
+                <li class="dropdown">
+                    <a href="#" id="moreBtn">More</a>
+                    <div class="menu-panel" id="moreDropdown">
+                        <ul class="menu-links">
+                            <li><a href="/admin">Admin</a></li>
+                            <li><a href="/patient">Patient</a></li>
+                            <li><a href="/doctor">Doctor</a></li>
+                            <li><a href="/delivery">Delivery</a></li>
+                            <li><a href="/prescription">Prescription</a></li>
+                            <li><a href="/reminder">Reminder</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
-        </nav>
-    </div>
-    <div class="panel-backdrop" id="panelBackdrop"></div>
+            <div class="nav-actions">
+                <a href="/login" class="btn-secondary">Sign in</a>
+                <a href="/register" class="btn-primary">Get started</a>
+            </div>
+        </div>
+    </nav>
     <main>
         <section id="reminder-system" data-module="reminder">
             <h2>Reminder System</h2>
@@ -56,28 +62,66 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 Telemedicine App</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CarePill</h4>
+                    <p>The infrastructure for the next generation of telemedicine. Built for speed, precision, and trust.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="/admin">Admin Panel</a></li>
+                        <li><a href="/doctor">Doctor Dashboard</a></li>
+                        <li><a href="/patient">Patient Portal</a></li>
+                        <li><a href="/prescription">Prescriptions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="/delivery">Delivery Tracking</a></li>
+                        <li><a href="/reminder">Reminders</a></li>
+                        <li><a href="/profile">Health Profiles</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CarePill. All rights reserved.</p>
+                <span style="float:right;">
+                    <a href="#">Privacy</a> &nbsp; <a href="#">Terms</a> &nbsp; <a href="#">System Status</a>
+                </span>
+            </div>
+        </div>
     </footer>
     <script>
-    // Hamburger menu panel logic
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const sidePanel = document.getElementById('sidePanel');
-    const closePanelBtn = document.getElementById('closePanelBtn');
-    const panelBackdrop = document.getElementById('panelBackdrop');
-    function openPanel() {
-        sidePanel.classList.add('open');
-        panelBackdrop.classList.add('open');
-    }
-    function closePanel() {
-        sidePanel.classList.remove('open');
-        panelBackdrop.classList.remove('open');
-    }
-    hamburgerBtn.addEventListener('click', openPanel);
-    closePanelBtn.addEventListener('click', closePanel);
-    panelBackdrop.addEventListener('click', closePanel);
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closePanel();
+    // Dropdown menu logic for 'More'
+    const moreBtn = document.getElementById('moreBtn');
+    const moreDropdown = document.getElementById('moreDropdown');
+    let dropdownOpen = false;
+    moreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdownOpen = !dropdownOpen;
+        if (dropdownOpen) {
+            moreDropdown.classList.add('active');
+        } else {
+            moreDropdown.classList.remove('active');
+        }
     });
+    document.addEventListener('click', function(e) {
+        if (!moreBtn.contains(e.target) && !moreDropdown.contains(e.target)) {
+            moreDropdown.classList.remove('active');
+            dropdownOpen = false;
+        }
+    });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            moreDropdown.classList.remove('active');
+            dropdownOpen = false;
+        }
+    });
+    </script>
     </script>
 </body>
 </html>
