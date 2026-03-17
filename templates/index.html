@@ -8,24 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>CarePill</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CarePill</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/matching">Matching</a></li>
+                <li><a href="/showcase">Showcase</a></li>
+                <li><a href="/mentor">Mentor</a></li>
+                <li class="dropdown">
+                    <a href="#" id="moreBtn">More</a>
+                    <div class="menu-panel" id="moreDropdown">
+                        <ul class="menu-links">
+                            <li><a href="#">AI Tools</a></li>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Teams</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Premium</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/login" class="btn-secondary">Sign in</a>
+                <a href="/register" class="btn-primary">Get started</a>
+            </div>
         </div>
-    </header>
-    <nav class="main-navbar">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/admin">Admin</a></li>
-            <li><a href="/patient">Patient</a></li>
-            <li><a href="/doctor">Doctor</a></li>
-            <li><a href="/delivery">Delivery</a></li>
-            <li><a href="/prescription">Prescription</a></li>
-            <li><a href="/reminder">Reminder</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
-        </ul>
     </nav>
     <main>
         <!-- Hero Section -->
@@ -191,52 +199,63 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>CarePill</h4>
-                    <p>The future of telemedicine, built for speed, precision, and patient care.</p>
+                    <p>The infrastructure for the next generation of telemedicine. Built for speed, precision, and trust.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Platform</h4>
+                    <h4>PRODUCT</h4>
                     <ul>
-                        <li><a href="/patient">Patient Portal</a></li>
-                        <li><a href="/doctor">Doctor Dashboard</a></li>
-                        <li><a href="/admin">Admin Panel</a></li>
-                        <li><a href="/delivery">Delivery Tracking</a></li>
+                        <li><a href="#">AI Matching</a></li>
+                        <li><a href="#">Team Assembly</a></li>
+                        <li><a href="#">Escrow</a></li>
+                        <li><a href="#">Verification</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Resources</h4>
+                    <h4>RESOURCES</h4>
                     <ul>
-                        <li><a href="/prescription">Prescription Management</a></li>
-                        <li><a href="/reminder">Medication Reminders</a></li>
-                        <li><a href="/profile">Health Profiles</a></li>
-                        <li>Help Center</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li>Privacy Policy</li>
-                        <li>Terms of Service</li>
-                        <li>HIPAA Compliance</li>
-                        <li>Contact Us</li>
+                        <li><a href="#">Showcase</a></li>
+                        <li><a href="#">Learning Hub</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Trust & Safety</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 CarePill. All rights reserved.</p>
+                <span style="float:right;">
+                    <a href="#">Privacy</a> &nbsp; <a href="#">Terms</a> &nbsp; <a href="#">System Status</a>
+                </span>
             </div>
         </div>
     </footer>
 
     <script src="/static/js/index.js"></script>
     <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
+    // Dropdown menu logic for 'More'
+    const moreBtn = document.getElementById('moreBtn');
+    const moreDropdown = document.getElementById('moreDropdown');
+    let dropdownOpen = false;
+    moreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdownOpen = !dropdownOpen;
+        if (dropdownOpen) {
+            moreDropdown.classList.add('active');
+        } else {
+            moreDropdown.classList.remove('active');
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('a[href="/"]').classList.add('active');
-        });
+    });
+    document.addEventListener('click', function(e) {
+        if (!moreBtn.contains(e.target) && !moreDropdown.contains(e.target)) {
+            moreDropdown.classList.remove('active');
+            dropdownOpen = false;
+        }
+    });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            moreDropdown.classList.remove('active');
+            dropdownOpen = false;
+        }
+    });
     </script>
 </body>
 </html>

@@ -27,6 +27,28 @@
             <li><a href="/login">Login</a></li>
         </ul>
     </nav>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+            <img src="/static/img/hamburger.png" alt="Menu" width="40" height="40" />
+        </button>
+        <!-- Side Navigation Panel -->
+        <div class="side-panel" id="sidePanel">
+            <button class="close-panel" id="closePanelBtn" aria-label="Close menu">&times;</button>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/patient">Patient</a></li>
+                    <li><a href="/doctor">Doctor</a></li>
+                    <li><a href="/delivery">Delivery</a></li>
+                    <li><a href="/prescription">Prescription</a></li>
+                    <li><a href="/reminder">Reminder</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="panel-backdrop" id="panelBackdrop"></div>
     <main>
         <!-- Profile Header -->
         <section class="profile-header">
@@ -325,6 +347,27 @@
             sidebar.classList.toggle('active');
         }
     </script>
+        <script>
+        // Hamburger menu panel logic
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidePanel = document.getElementById('sidePanel');
+        const closePanelBtn = document.getElementById('closePanelBtn');
+        const panelBackdrop = document.getElementById('panelBackdrop');
+        function openPanel() {
+            sidePanel.classList.add('open');
+            panelBackdrop.classList.add('open');
+        }
+        function closePanel() {
+            sidePanel.classList.remove('open');
+            panelBackdrop.classList.remove('open');
+        }
+        hamburgerBtn.addEventListener('click', openPanel);
+        closePanelBtn.addEventListener('click', closePanel);
+        panelBackdrop.addEventListener('click', closePanel);
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePanel();
+        });
+        </script>
 </body>
 </html>
         <p>&copy; 2026 CarePill</p>
