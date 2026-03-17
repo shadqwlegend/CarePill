@@ -19,8 +19,19 @@
                     <li><a href="/chat">Chat</a></li>
                     <li><a href="/login">Login</a></li>
                 </ul>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             </div>
         </nav>
+        <div class="menu-panel" id="menu-panel">
+            <ul class="menu-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/doctor">Doctor</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/chat">Chat</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <section class="hero">
@@ -91,5 +102,11 @@
             <p>&copy; 2026 CarePill. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            const panel = document.getElementById('menu-panel');
+            panel.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

@@ -2,19 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Brut Work Inspired Color Palette */
-    --primary-color: #8b5cf6; /* Lilac/Purple primary */
-    --primary-dark: #7c3aed; /* Darker purple */
-    --primary-light: #a78bfa; /* Lighter purple */
-    --accent-color: #06b6d4; /* Cyan accent */
+    /* Pleasant Blue-Green Color Palette */
+    --primary-color: #06b6d4; /* Cyan primary */
+    --primary-dark: #0891b2; /* Darker cyan */
+    --primary-light: #22d3ee; /* Lighter cyan */
+    --accent-color: #10b981; /* Emerald accent */
     --text-primary: #0f172a; /* Dark slate */
     --text-secondary: #64748b; /* Slate */
     --text-light: #94a3b8; /* Light slate */
     --text-inverse: #f8fafc; /* Light background text */
     --bg-primary: #ffffff; /* White */
-    --bg-secondary: #f8fafc; /* Light gray */
-    --bg-dark: #0f172a; /* Dark slate */
-    --bg-darker: #020617; /* Darker background */
+    --bg-secondary: #f1f5f9; /* Very light gray */
+    --bg-dark: #1e293b; /* Dark slate */
+    --bg-darker: #0f172a; /* Darker background */
     --border-color: #e2e8f0; /* Light border */
     --border-dark: #334155; /* Dark border */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -454,6 +454,52 @@ header {
     cursor: pointer;
     color: var(--text-primary);
     padding: 0.5rem;
+}
+
+/* Menu Panel */
+.menu-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.menu-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-links {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.menu-links li {
+    margin: 0;
+}
+
+.menu-links a {
+    display: block;
+    padding: 1rem 2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.menu-links a:hover {
+    background: var(--bg-secondary);
+    color: var(--primary-color);
 }
 
 /* Sidebar Navigation */

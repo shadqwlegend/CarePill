@@ -14,8 +14,15 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/register">Register</a></li>
             </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
+    <div class="menu-panel" id="menu-panel">
+        <ul class="menu-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </div>
     <main>
         <section class="login-section">
             <div class="container">
@@ -43,7 +50,12 @@
             <p>&copy; 2026 CarePill. All rights reserved.</p>
         </div>
     </footer>
-    <script src="/static/js/login.js"></script>
+    <script>
+        function toggleMenu() {
+            const panel = document.getElementById('menu-panel');
+            panel.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
             sidebar.classList.toggle('active');
