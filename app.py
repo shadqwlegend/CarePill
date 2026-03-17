@@ -70,6 +70,22 @@ def login():
 def register():
     return render_template('register.html')
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/matching')
+def matching():
+    return render_template('index.html')  # Matching redirects to home for now
+
+@app.route('/showcase')
+def showcase():
+    return render_template('index.html')  # Showcase redirects to home for now
+
+@app.route('/mentor')
+def mentor():
+    return render_template('index.html')  # Mentor redirects to home for now
+
 @app.route('/chat')
 def chat():
     return render_template('chat.html')
