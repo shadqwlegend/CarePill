@@ -14,6 +14,29 @@ async function loadUsers() {
     }
 }
 
+document.getElementById('doctor-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = {
+        name: document.getElementById('doctor-name').value,
+        specialty: document.getElementById('doctor-specialty').value
+    };
+    try {
+        const response = await fetch('/api/doctors', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        if (response.ok) {
+            alert('Doctor added!');
+            // Optionally reload doctors or something
+        } else {
+            alert('Error adding doctor');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+
 function manageUsers() {
     alert('Manage Users functionality');
 }

@@ -70,9 +70,9 @@ def login():
 def register():
     return render_template('register.html')
 
-@app.route('/profile')
-def profile():
-    return render_template('profile.html')
+@app.route('/chat')
+def chat():
+    return render_template('chat.html')
 
 # API endpoints
 @app.route('/api/users', methods=['GET'])
@@ -100,6 +100,18 @@ def add_patient():
 def get_doctors():
     return jsonify(doctors)
 
+@app.route('/api/doctors', methods=['POST'])
+def add_doctor():
+    data = request.get_json()
+    new_id = max(d['id'] for d in doctors) + 1 if doctors else 1
+    new_doctor = {
+        'id': new_id,
+        'name': data['name'],
+        'specialty': data.get('specialty', 'General')
+    }
+    doctors.append(new_doctor)
+    return jsonify(new_doctor), 201
+
 @app.route('/api/prescriptions', methods=['GET'])
 def get_prescriptions():
     return jsonify(prescriptions)
@@ -122,6 +134,18 @@ def add_prescription():
 def get_deliveries():
     return jsonify(deliveries)
 
+@app.route('/api/deliveries', methods=['POST'])
+def add_delivery():
+    data = request.get_json()
+    new_id = max(d['id'] for d in deliveries) + 1 if deliveries else 1
+    new_delivery = {
+        'id': new_id,
+        'prescription_id': data['prescription_id'],
+        'status': data.get('status', 'Pending')
+    }
+    deliveries.append(new_delivery)
+    return jsonify(new_delivery), 201
+
 @app.route('/api/reminders', methods=['GET'])
 def get_reminders():
     return jsonify(reminders)
@@ -138,5 +162,17 @@ def add_reminder():
     reminders.append(new_reminder)
     return jsonify(new_reminder), 201
 
-if __name__ == '__main__':
-    app.run(debug=False)
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    # Simple check: if username is 'admin' and password 'admin', etc.
+    if username == 'admin' and password == 'admin':
+        return jsonify({'message': 'Login successful', 'role': 'admin'}), 200
+    elif username == 'doctor' and password == 'doctor':
+        return jsonify({'message': 'Login successful', 'role': 'doctor'}), 200
+    elif username == 'patient' and password == 'patient':
+        return jsonify({'message': 'Login successful', 'role': 'patient'}), 200
+    else:
+        return jsonify({'message': 'Invalid credentials'}), 401

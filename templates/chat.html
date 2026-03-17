@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePill - Chat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">CarePill</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/doctor">Doctor</a></li>
+                <li><a href="/chat">Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="chat-section">
+            <div class="container">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2>Doctor-Patient Chat</h2>
+                        <p>Communicate securely with your healthcare provider</p>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages will be loaded here -->
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Type your message..." />
+                        <button id="send-button" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CarePill. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>

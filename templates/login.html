@@ -7,47 +7,45 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>CarePill - Login</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        </div>
-    </header>
-    <aside id="sidebar">
-        <nav>
-            <ul>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">CarePill</h1>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/patient">Patient</a></li>
-                <li><a href="/doctor">Doctor</a></li>
-                <li><a href="/delivery">Delivery</a></li>
-                <li><a href="/prescription">Prescription</a></li>
-                <li><a href="/reminder">Reminder</a></li>
-                <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
             </ul>
-        </nav>
-    </aside>
+        </div>
+    </nav>
     <main>
-        <section id="login" data-module="home">
-            <h2>Login to CarePill</h2>
-            <form id="login-form">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="/register">Register here</a></p>
+        <section class="login-section">
+            <div class="container">
+                <div class="login-card">
+                    <h2>Sign In to CarePill</h2>
+                    <p>Access your telemedicine dashboard</p>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                    <p class="register-link">Don't have an account? <a href="/register">Register here</a></p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 CarePill</p>
+        <div class="container">
+            <p>&copy; 2026 CarePill. All rights reserved.</p>
+        </div>
     </footer>
     <script src="/static/js/login.js"></script>
-    <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
+</body>
+</html>
             sidebar.classList.toggle('active');
         }
     </script>

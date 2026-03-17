@@ -17,8 +17,8 @@ async function loadPrescriptions() {
 document.getElementById('prescription-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const data = {
-        patient_id: document.getElementById('patient-id').value,
-        doctor_id: 1,  // default
+        patient_id: parseInt(document.getElementById('patient-id').value),
+        doctor_id: parseInt(document.getElementById('doctor-id').value),
         medication: document.getElementById('medication').value,
         dosage: document.getElementById('dosage').value
     };

@@ -3,32 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telemedicine Application</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CarePill - Telemedicine Management System</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Telemedicine Management System</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="admin.html">Admin</a></li>
-                <li><a href="patient.html">Patient</a></li>
-                <li><a href="doctor.html">Doctor</a></li>
-                <li><a href="delivery.html">Delivery</a></li>
-                <li><a href="prescription.html">Prescription</a></li>
-                <li><a href="reminder.html">Reminder</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">CarePill</h1>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/patient">Patient</a></li>
+                    <li><a href="/doctor">Doctor</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/chat">Chat</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
-        <section id="home">
-            <h2>Welcome to Telemedicine App</h2>
-            <p>Manage your telemedicine services efficiently.</p>
+        <section class="hero">
+            <div class="container">
+                <h1>Revolutionize Your Healthcare Experience</h1>
+                <p>Connect with doctors, manage prescriptions, and get medication delivered—all in one platform.</p>
+                <div class="hero-buttons">
+                    <a href="/register" class="btn btn-primary">Get Started</a>
+                    <a href="/login" class="btn btn-secondary">Sign In</a>
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose CarePill?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>AI-Powered Matching</h3>
+                        <p>Our system matches patients with the right doctors based on symptoms and availability.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Secure Prescriptions</h3>
+                        <p>Digital prescriptions with blockchain security to prevent fraud.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Fast Delivery</h3>
+                        <p>Medication delivered to your doorstep within hours.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Smart Reminders</h3>
+                        <p>AI-driven reminders for medication and appointments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <h3>10,000+</h3>
+                        <p>Patients Served</p>
+                    </div>
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Doctors Onboard</p>
+                    </div>
+                    <div class="stat">
+                        <h3>95%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Transform Your Healthcare?</h2>
+                <p>Join thousands of users who trust CarePill for their medical needs.</p>
+                <a href="/register" class="btn btn-primary">Start Now</a>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 Telemedicine App</p>
+        <div class="container">
+            <p>&copy; 2026 CarePill. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -14,9 +14,27 @@ async function loadDeliveries() {
     }
 }
 
-document.getElementById('delivery-form').addEventListener('submit', function(e) {
+document.getElementById('delivery-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    alert('Delivery status updated!');
+    const data = {
+        prescription_id: parseInt(document.getElementById('prescription-id').value),
+        status: document.getElementById('status').value
+    };
+    try {
+        const response = await fetch('/api/deliveries', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        if (response.ok) {
+            alert('Delivery added!');
+            loadDeliveries();
+        } else {
+            alert('Error adding delivery');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
 });
 
 window.onload = function() {

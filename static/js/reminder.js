@@ -17,7 +17,7 @@ async function loadReminders() {
 document.getElementById('reminder-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const data = {
-        patient_id: 1,  // default
+        patient_id: parseInt(document.getElementById('patient-id').value),
         message: document.getElementById('message').value
     };
     try {
