@@ -192,3 +192,6 @@ def api_login():
         return jsonify({'message': 'Login successful', 'role': 'patient'}), 200
     else:
         return jsonify({'message': 'Invalid credentials'}), 401
+
+if __name__ == '__main__':
+    app.run(debug=True)
