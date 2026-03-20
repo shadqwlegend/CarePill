@@ -3,110 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarePill - Telemedicine Management System</title>
+    <title>CarePill - Smart Medication Management Application</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Calibri:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">CarePill</h1>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/patient">Patient</a></li>
-                    <li><a href="/doctor">Doctor</a></li>
-                    <li><a href="/admin">Admin</a></li>
-                    <li><a href="/chat">Chat</a></li>
-                    <li><a href="/login">Login</a></li>
-                </ul>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            </div>
-        </nav>
-        <div class="menu-panel" id="menu-panel">
-            <ul class="menu-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/patient">Patient</a></li>
-                <li><a href="/doctor">Doctor</a></li>
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/chat">Chat</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Revolutionize Your Healthcare Experience</h1>
-                <p>Connect with doctors, manage prescriptions, and get medication delivered—all in one platform.</p>
-                <div class="hero-buttons">
-                    <a href="/register" class="btn btn-primary">Get Started</a>
-                    <a href="/login" class="btn btn-secondary">Sign In</a>
-                </div>
-            </div>
-        </section>
-        <section class="features">
-            <div class="container">
-                <h2>Why Choose CarePill?</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <h3>AI-Powered Matching</h3>
-                        <p>Our system matches patients with the right doctors based on symptoms and availability.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Secure Prescriptions</h3>
-                        <p>Digital prescriptions with blockchain security to prevent fraud.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Fast Delivery</h3>
-                        <p>Medication delivered to your doorstep within hours.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Smart Reminders</h3>
-                        <p>AI-driven reminders for medication and appointments.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat">
-                        <h3>10,000+</h3>
-                        <p>Patients Served</p>
-                    </div>
-                    <div class="stat">
-                        <h3>500+</h3>
-                        <p>Doctors Onboard</p>
-                    </div>
-                    <div class="stat">
-                        <h3>95%</h3>
-                        <p>Satisfaction Rate</p>
-                    </div>
-                    <div class="stat">
-                        <h3>24/7</h3>
-                        <p>Support Available</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cta">
-            <div class="container">
-                <h2>Ready to Transform Your Healthcare?</h2>
-                <p>Join thousands of users who trust CarePill for their medical needs.</p>
-                <a href="/register" class="btn btn-primary">Start Now</a>
-            </div>
-        </section>
-    </main>
-    <footer>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <p>&copy; 2026 CarePill. All rights reserved.</p>
+            <div class="logo">CarePill</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#cta" class="btn btn-outline">Learn More</a>
+                <a href="#cta" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="dot-grid"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>CarePill — Smart Medication Management</h1>
+                <p class="hero-subtitle">Online consultations, digital prescriptions, and intelligent medicine reminders — all in one app.</p>
+                <div class="hero-buttons">
+                    <a href="#cta" class="btn btn-primary">Get Started</a>
+                    <a href="#modules" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-mockup">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="alarm-screen">
+                            <div class="alarm-icon">⏰</div>
+                            <h3>Time to take your medicine!</h3>
+                            <p>Aspirin 100mg</p>
+                            <div class="medicine-image">💊</div>
+                            <button class="btn btn-primary">Mark as Taken</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem We Solve -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <h2>The Problem We Solve</h2>
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="problem-accent"></div>
+                    <h3>Traditional hospital visits</h3>
+                    <p>Time-consuming, especially for elderly and rural patients</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-accent"></div>
+                    <h3>Manual paper prescriptions</h3>
+                    <p>No digital storage, easy to lose or misread</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-accent"></div>
+                    <h3>Missed medicine doses</h3>
+                    <p>No automated reminder system leads to poor treatment outcomes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution -->
+    <section id="solution" class="solution">
+        <div class="container">
+            <h2>Everything you need for smarter healthcare at home.</h2>
+            <div class="benefits">
+                <span class="benefit-pill">✅ Telemedicine</span>
+                <span class="benefit-pill">✅ Digital Prescriptions</span>
+                <span class="benefit-pill">✅ Smart Reminders</span>
+                <span class="benefit-pill">✅ Medicine Delivery</span>
+            </div>
+            <div class="solution-content">
+                <div class="solution-text">
+                    <p>CarePill integrates telemedicine, digital prescription management, and automated medicine reminders into a seamless healthcare experience. Our platform connects patients with doctors remotely, ensures prescriptions are stored digitally and securely, and uses intelligent algorithms to send timely reminders for medication intake.</p>
+                </div>
+                <div class="solution-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">👨‍⚕️</div>
+                        <p>Doctor</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">📋</div>
+                        <p>Prescription</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">⏰</div>
+                        <p>Reminder</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">👤</div>
+                        <p>Patient</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 Core Modules -->
+    <section id="modules" class="modules">
+        <div class="container">
+            <h2>Six Modules. One Seamless System.</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">👤</div>
+                    <h3>Patient Module</h3>
+                    <ul>
+                        <li>Register & login</li>
+                        <li>Book appointments</li>
+                        <li>Track medicine intake</li>
+                        <li>Order medicines online</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">🩺</div>
+                    <h3>Doctor Module</h3>
+                    <ul>
+                        <li>Online consultation interface</li>
+                        <li>View patient history</li>
+                        <li>Issue digital prescriptions</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">📋</div>
+                    <h3>Prescription Module</h3>
+                    <ul>
+                        <li>Generate digital Rx</li>
+                        <li>Store dosage & schedule</li>
+                        <li>Link to reminder system</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">⏰</div>
+                    <h3>Medicine Reminder</h3>
+                    <ul>
+                        <li>Alarm-based reminders</li>
+                        <li>Display medicine name & image</li>
+                        <li>Missed dose tracking</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">🏪</div>
+                    <h3>Pharmacy & Delivery</h3>
+                    <ul>
+                        <li>Order from prescription</li>
+                        <li>Track delivery status</li>
+                        <li>Payment integration</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">🔧</div>
+                    <h3>Admin Module</h3>
+                    <ul>
+                        <li>Manage users & doctors</li>
+                        <li>Monitor system activity</li>
+                        <li>Reports & analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🩺</div>
+                    <p>Doctor consults online & issues digital prescription</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">📋</div>
+                    <p>System stores prescription with medicine name, dose & schedule</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">⏰</div>
+                    <p>Smart alarm triggers at prescribed time — shows medicine image</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">✅</div>
+                    <p>Patient marks as taken — intake history logged automatically</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="tech-stack">
+        <div class="container">
+            <h2>Built with Modern Technology</h2>
+            <div class="tech-content">
+                <div class="tech-column">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>React.js / HTML / CSS / JavaScript</li>
+                    </ul>
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Python / Java / PHP</li>
+                    </ul>
+                    <h3>Database</h3>
+                    <ul>
+                        <li>MySQL with JWT Authentication</li>
+                    </ul>
+                </div>
+                <div class="tech-column">
+                    <h3>Notifications</h3>
+                    <ul>
+                        <li>SMS / Email / App Notifications</li>
+                    </ul>
+                    <h3>APIs</h3>
+                    <ul>
+                        <li>REST API Integration</li>
+                    </ul>
+                    <h3>Platform</h3>
+                    <ul>
+                        <li>Web + Android</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It Helps -->
+    <section id="who-it-helps" class="who-it-helps">
+        <div class="container">
+            <div class="user-cards">
+                <div class="user-card">
+                    <div class="user-avatar">👴</div>
+                    <h3>Elderly Patients</h3>
+                    <p>Never miss a dose again with automatic alarms and image-based medicine display</p>
+                </div>
+                <div class="user-card">
+                    <div class="user-avatar">🏥</div>
+                    <h3>Doctors</h3>
+                    <p>Issue prescriptions digitally, consult remotely, track patient compliance</p>
+                </div>
+                <div class="user-card">
+                    <div class="user-avatar">🌾</div>
+                    <h3>Rural Communities</h3>
+                    <p>Access quality healthcare from home without hospital visits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section id="cta" class="cta-banner">
+        <div class="container">
+            <h2>Better Healthcare Starts Here</h2>
+            <p>Join CarePill and take control of your medication management.</p>
+            <a href="#" class="btn btn-primary">Download the App</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">CarePill</div>
+                    <p>Smart Medication Management Application</p>
+                </div>
+                <div class="footer-center">
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#modules">Modules</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#tech-stack">Tech Stack</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <p>Sreyas Institute of Engineering and Technology</p>
+                    <p>Dept. of CSE | RTRP 2024–2028</p>
+                </div>
+            </div>
         </div>
     </footer>
-    <script>
-        function toggleMenu() {
-            const panel = document.getElementById('menu-panel');
-            panel.classList.toggle('active');
-        }
-    </script>
+
+    <script src="static/js/index.js"></script>
 </body>
 </html>
